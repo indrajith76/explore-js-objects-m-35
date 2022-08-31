@@ -1,4 +1,4 @@
-// 1. create object using object literals
+// 1. create object using object literals (Most importent)
 const player = {};
 player.name = 'Nirob'; // 'Nirob' is a properties
 player.specialty = 'batsman';
@@ -27,17 +27,36 @@ const atel = Object.create(student);
 // console.log(atel.name);
 
 
-// 4. Class
+// 4. Class (Most importent)
+/*
+// Program - 1
 class Person {
     name = 'abul';
     address = 'soder ghat';
     constructor(age){
         this.age = age;
     }
-}
+} 
 
 const person1 = new Person(43);
 console.log(person1);
+*/
+
+/* // Program - 2
+class Student {
+    name;
+    roll;
+    cls;
+    constructor(name, roll, cls){
+        this.name = name;
+        this.roll = roll;
+        this.cls = cls;
+    }
+}
+const student1 = new Student('Indrajith', 602, 'Cmt-8');
+console.log(student1); */
+
+
 
 // 5. Function <-- aita akhon use hoy nah after ES6
 function Car(model, price) {
@@ -45,5 +64,5 @@ function Car(model, price) {
     this.price = price;
 }
 
-const tesla = new Car('elon', 32);
-console.log(tesla);
+// const tesla = new Car('elon', 32);
+// console.log(tesla);
