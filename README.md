@@ -85,7 +85,7 @@ Syntax :
 <pre>
     delete objectName.objectPropertyName;
 </pre>
-বিস্তারিত - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete 
+📌 বিস্তারিত - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete 
 
 ### 5. Object.seal() method :
 Object.seal() method এপ্লাই করলে Object এর property delete ও নতুন property create করা যাবে নাহ্। তবে Object এর property এর value update করা যাবে।
@@ -120,7 +120,7 @@ bottle.height = 12;  // add new property
 
 console.log(bottle);
 </pre>
-### 📌Details about Object :
+### 📌 Details about Object :
 Link - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 
 ## 🎯 Topic-3 : Loop through an object using for in, for of, object entries.
@@ -184,7 +184,7 @@ const firstString = JSON.stringify(first); // convert object to json string
 const secondString = JSON.stringify(second);
 
 function compareObject(first, second){
-    const firstKeys = Object.keys(first);
+    const firstKeys = Object.keys(first); // get object properties name
     const secondKeys = Object.keys(second);
     if(firstKeys.length === secondKeys.length) {
         for (const key of firstKeys) {
@@ -202,3 +202,98 @@ function compareObject(first, second){
 const isSame = compareObject(first, second);
 console.log(isSame);
 </pre>
+
+## 🎯 Topic-4 : JavaScript Borrowing Methods (Borrow method from object and use it on another object)
+
+### 1️⃣ call() Method :
+<br>
+Example :
+<pre>
+const nobin = {
+    name : 'Nobin Roy',
+    category : 'Junior Developer',
+    salary : 35000,
+    work: function(){
+        return `${this.name} is ${this.category} and his work is frontend development.`;
+    },
+    remainMoney : function(foodCost, otherExpence) {
+        this.salary = this.salary - foodCost - otherExpence;
+        return `${this.name} has ${this.salary} taka left.`;
+    }
+}
+
+const jubin = {
+    name: 'Jubin Kapur',
+    category : 'Intern Developer',
+    salary: '10000'
+}
+
+const jubinWork = nobin.work.call(jubin);
+const jubinRemainMoney = nobin.remainMoney.call(jubin, 5000, 2000);
+
+console.log(jubinWork);
+console.log(jubinRemainMoney); 
+</pre>
+📝 Note : call method সরাসরি parameter pass করে থাকে ।
+<br>
+
+### 2️⃣ apply() Method :
+<br>
+Example :
+<pre>
+const nobin = {
+    name : 'Nobin Roy',
+    category : 'Junior Developer',
+    salary : 35000,
+    work: function(){
+        return `${this.name} is ${this.category} and his work is frontend development.`;
+    },
+    remainMoney : function(foodCost, otherExpence) {
+        this.salary = this.salary - foodCost - otherExpence;
+        return `${this.name} has ${this.salary} taka left.`;
+    }
+}
+
+const jubin = {
+    name: 'Jubin Kapur',
+    category : 'Intern Developer',
+    salary: '10000'
+}
+
+const jubinWork = nobin.work.apply(jubin);
+const jubinRemainMoney = nobin.remainMoney.apply(jubin, [5000, 2000]);
+console.log(jubinWork);
+console.log(jubinRemainMoney); 
+</pre>
+📝 Note : apply() method সরাসরি parameter pass করে থাকে এবং parameter এর value "[]"(Array) এর মধ্যে pass করে।
+<br>
+
+### 3️⃣ bind() Method :
+<br>
+Example :
+<pre>
+const nobin = {
+    name : 'Nobin Roy',
+    category : 'Junior Developer',
+    salary : 35000,
+    work: function(){
+        return `${this.name} is ${this.category} and his work is frontend development.`;
+    },
+    remainMoney : function(foodCost, otherExpence) {
+        this.salary = this.salary - foodCost - otherExpence;
+        return `${this.name} has ${this.salary} taka left.`;
+    }
+}
+
+const jubin = {
+    name: 'Jubin Kapur',
+    category : 'Intern Developer',
+    salary: '10000'
+}
+
+const jubinWork = nobin.work.bind(jubin);
+const jubinRemainMoney = nobin.remainMoney.bind(jubin);
+console.log(jubinWork());
+console.log(jubinRemainMoney(5000, 2000)); 
+</pre>
+📝 Note : bind() Method variableটাকে ফাংশন করে নেয়। তারপর variableটাকে call করে কাজ করা যায় এবং যদি parameter এ কোন value pass করতে হয় তাও করা যায়।
