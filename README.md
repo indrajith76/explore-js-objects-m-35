@@ -265,7 +265,7 @@ const jubinRemainMoney = nobin.remainMoney.apply(jubin, [5000, 2000]);
 console.log(jubinWork);
 console.log(jubinRemainMoney); 
 </pre>
-📝 Note : apply() method সরাসরি parameter pass করে থাকে এবং parameter এর value "[]"(Array) এর মধ্যে pass করে।
+📝 Note : apply() method সরাসরি parameter pass করে থাকে এবং parameter এর value "[ ]"(Array) এর মধ্যে pass করে।
 <br>
 
 ### 3️⃣ bind() Method :
@@ -305,4 +305,9 @@ console.log(jubinRemainMoney(5000, 2000));
 <br>
 > apply() Method - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 <br>
-> bind() Method - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+> bind() Method - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind 
+<br>
+
+### Defferent between call(), apply() and bind() :
+
+![images](explore-js-objects/img/borrowMethods.JPG) 
