@@ -297,3 +297,12 @@ console.log(jubinWork());
 console.log(jubinRemainMoney(5000, 2000)); 
 </pre>
 📝 Note : bind() Method variableটাকে ফাংশন করে নেয়। তারপর variableটাকে call করে কাজ করা যায় এবং যদি parameter এ কোন value pass করতে হয় তাও করা যায়।
+<br>
+> Importent Links :
+> https://www.tutorialrepublic.com/javascript-tutorial/javascript-borrowing-methods.php
+<br>
+> call() Method - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+<br>
+> apply() Method - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+<br>
+> bind() Method - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
