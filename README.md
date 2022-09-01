@@ -78,7 +78,7 @@ console.log(pair);
 // output:
 [ ["color", "yellow"], ["price", 50], ["isCleaned", true], ["capacity", 1],]
 </pre>
-🔳 Array এর ভিতর Array থাকাকে Two Dimensional Array বলা হয়।
+### 🔳 Array এর ভিতর Array থাকাকে Two Dimensional Array বলা হয়।
 ### 4. Way of delete Object property :
 Object এর কোন property কে delete করার জন্য এ delete অপারেটর ব্যবহার করা হয়।<br>
 Syntax :
@@ -120,3 +120,57 @@ bottle.height = 12;  // add new property
 
 console.log(bottle);
 </pre>
+### 📌Details about Object :
+Link - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+## 🎯 Topic-3 : Loop through an object using for in, for of, object entries.
+🔴 for of loop can not used with objects !<br>
+Example :
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 }
+for (const key of bottle) {
+    console.log(key);
+}
+
+// output >> TypeError: bottle is not iterable
+</pre>
+📌 3 Ways to read object properties :
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 }
+bottle.color    // first way
+bottle['color'] // second way
+bottle[key] // third way
+</pre>
+
+### 1️⃣ First option to loop through an object(using for of loop) :
+Syntax : ( It's not usefull way ! )
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 }
+
+const keys = Object.keys(bottle);
+for (const key of keys) {
+    console.log(key, bottle[key]);
+}
+</pre>
+### 2️⃣ Second option to loop through an object(using for in loop) :
+Syntax : (It's usefull way)
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 }
+
+for(const key in bottle) {
+    const value = bottle[key];
+    console.log(key, value);
+}
+</pre>
+
+### 3️⃣ Third option to loop through an object(using for of loop) :
+Syntax : (It's usefull and advanced way)
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 }
+
+const pair = Object.entries(bottle);
+for (const [key, value] of Object.entries(bottle)) {
+    console.log(key, value);
+}
+</pre>
+
