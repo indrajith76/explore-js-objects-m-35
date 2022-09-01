@@ -48,3 +48,33 @@ const person2 = new Person('Jane', 'Doe');
     console.log(person2.name);
     // output = John Doe
 </pre>
+
+## 🎯 Topic-2 : Object method property
+### 1. Object.key() method :
+Object.key() মেথড ব্যবহার করে bottle Object এর সকল property গুলোকে একটি Array তে প্রিন্ট করানো যায়।
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 };
+const keys = Object.keys(bottle);
+console.log(keys);
+// output = [ 'color', 'price', 'isCleaned', 'capacity' ]
+</pre>
+
+### 2. Object.values() method :
+Object.values() মেথড ব্যবহার করে bottle Object এর সকল value গুলোকে একটি Array তে প্রিন্ট করানো যায়।
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 };
+const values = Object.values(bottle);
+console.log(values);
+// output = [ 'yellow', 50, true, 1 ]
+</pre>
+
+### 3. Object.entries() method :
+Object.entries() মেথড ব্যবহার এর মাধ্যমে Object কে two Dimesion ভাবে Array তে প্রিন্ট করানো যায়।
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 };
+const pair = Object.entries(bottle);
+console.log(pair);
+
+// output:
+[ ["color", "yellow"], ["price", 50], ["isCleaned", true], ["capacity", 1],]
+</pre>
