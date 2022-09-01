@@ -124,7 +124,7 @@ console.log(bottle);
 Link - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 
 ## 🎯 Topic-3 : Loop through an object using for in, for of, object entries.
-🔴 for of loop can not used with objects !<br>
+🔴 Warning : for of loop can not used with objects !<br>
 Example :
 <pre>
 const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 }
@@ -174,3 +174,31 @@ for (const [key, value] of Object.entries(bottle)) {
 }
 </pre>
 
+## 🎯 Topic-4 : How to Compare objects?
+🔴 Warning : do not use this method to compare object or array.<br>
+Example :
+<pre>
+const first = {a: 2, b: 5, c: 7};
+const second = {a: 2, c: 7,b: 5};
+const firstString = JSON.stringify(first); // convert object to json string
+const secondString = JSON.stringify(second);
+
+function compareObject(first, second){
+    const firstKeys = Object.keys(first);
+    const secondKeys = Object.keys(second);
+    if(firstKeys.length === secondKeys.length) {
+        for (const key of firstKeys) {
+            const firstkey = first[key];
+            const secondKey = second[key];
+            if(firstkey !== secondKey) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+const isSame = compareObject(first, second);
+console.log(isSame);
+</pre>
