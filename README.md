@@ -50,7 +50,7 @@ const person2 = new Person('Jane', 'Doe');
 </pre>
 
 ## 🎯 Topic-2 : Object method property
-### 1. Object.key() method :
+### 1. Object.keys() method :
 Object.key() মেথড ব্যবহার করে bottle Object এর সকল property গুলোকে একটি Array তে প্রিন্ট করানো যায়।
 <pre>
 const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 };
@@ -77,4 +77,46 @@ console.log(pair);
 
 // output:
 [ ["color", "yellow"], ["price", 50], ["isCleaned", true], ["capacity", 1],]
+</pre>
+🔳 Array এর ভিতর Array থাকাকে Two Dimensional Array বলা হয়।
+### 4. Way of delete Object property :
+Object এর কোন property কে delete করার জন্য এ delete অপারেটর ব্যবহার করা হয়।<br>
+Syntax :
+<pre>
+    delete objectName.objectPropertyName;
+</pre>
+বিস্তারিত - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete 
+
+### 5. Object.seal() method :
+Object.seal() method এপ্লাই করলে Object এর property delete ও নতুন property create করা যাবে নাহ্। তবে Object এর property এর value update করা যাবে।
+![image](explore-js-objects/img/seal.JPG) <br>
+Example :
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 };
+
+console.log(bottle);
+
+Object.seal(bottle); // seal method
+delete bottle.isCleaned; // delete property
+bottle.price = 200; // update property value
+bottle.height = 12;  // add new property
+
+console.log(bottle);
+</pre>
+
+### 6. Object.freeze() method :
+Object.freeze() method এপ্লাই করলে Object কে শুধু Read করা যায়। তবে Object এর property delete, নতুন property create ও property value update করা যাবে নাহ্।
+![image](explore-js-objects/img/freeze.JPG)
+Example :
+<pre>
+const bottle = { color: "yellow", price: 50, isCleaned: true, capacity: 1 };
+
+console.log(bottle);
+
+Object.freeze(bottle); // freeze method
+delete bottle.isCleaned; // delete property
+bottle.price = 200; // update property value
+bottle.height = 12;  // add new property
+
+console.log(bottle);
 </pre>
